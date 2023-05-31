@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
+<body>
+  <div class="wrapper" id="butter">
+    <div class="nav_wrapper" id="nav">
+      <div class="nav">
+        <div class="logo" id="h_c">
+          <h1>m<span>U</span>sic</h1>
+        </div>
+        <nav id="ul">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#AU">About Us</a></li>
+            <li><a href="#WWD">What We do</a></li>
+            <li><a href="#join">Join Us</a></li>
+          </ul>
+        </nav>
+        <div class="ham_continer" onclick="navigation()" ondblclick="navigation_close()">
+          <div class="me" id="me">click me <i class="fas fa-long-arrow-alt-right"></i></div>
+          <div class="ham"></div>
+        </div>
+      </div>
+    </div>
+
+    <section class="home" id="home">
+      <div class="home_content">
+      </div>
+    </section>
+    <div class="do" id="AU">
+      <div class="do_content" id="page1">
+        <div class="title">ABOUT US</div>
+        <p>01</p>
+        <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim iure cum atque, deleniti repellendus accusamus corrupti provident ex iusto quidem fugiat nesciunt amet quibusdam qui optio perferendis voluptatum porro ullam perspiciatis numquam nostrum libero non? Eos laborum dolore, mollitia at placeat repellendus voluptatum rem ea quam, asperiores praesentium autem dolor hic enim, a maxime?</h3>
+      </div>
+    </div>
+    <section class="page2" id="WWD">
+      <div class="img"></div>
+      <div class="label">
+        <p>02</p>
+      </div>
+      <div class="page2_container">
+        <h1>WHAT <br><span>WE DO</span></h1>
+        <div class="page2_content">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint voluptates in aspernatur debitis nulla, assumenda ut, laboriosam ipsum accusamus similique cumque eum earum ea eligendi! Aperiam corporis vitae tempora ipsum incidunt dolores eum iure, non quibusdam at magnam quisquam repellendus ab eligendi amet fuga. Dolorem enim fuga aut ipsam ea laborum impedit expedita neque nulla nam autem quisquam delectus, cumque necessitatibus dolore, illum nobis soluta quaerat accusantium esse molestiae explicabo iusto porro? Laudantium non omnis hic. Veritatis suscipit eligendi odit?</p>
+        </div>
+        
+      </div>
+    </section>
+    <section class="join" id="join">
+      <div class="label">
+        <p>03</p>
+      </div>
+      <div class="join_container" id="join_container">
+        <h1>Register<br>and<br><span>Improve your Music</span></h1>
+        <a href="#">Join Us</a>
+      </div> 
+    </section>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/scrolltosmooth/dist/scrolltosmooth.pkgd.min.js"></script>
+  <script>
+    var smoothScroll = new scrollToSmooth('a', {
+      targetAttribute: 'href',
+      duration: 1500,
+      durationRelative: false,
+      durationMin: false,
+      durationMax: false,
+      easing: 'easeOutQuart',
+      onScrollStart: (data) => { console.log(data); },
+      onScrollUpdate: (data) => { console.log(data); },
+      onScrollEnd: (data) => { console.log(data); },
+      fixedHeader: null
+    })
+    smoothScroll.init();
+  </script>
+
+  <script type="text/javascript">
+		const nav = document.getElementById('nav');
+    const c1 = document.getElementById('h_c');
+    const ul = document.getElementById('ul');
+    const About_Us = document.getElementById('page1');
+    const c2 = document.getElementById('WWD');
+    const me = document.getElementById('me');
+    const buy = document.getElementById('join_container');
+
+		window.addEventListener("scroll", function(){
+			nav.classList.toggle('sticky', window.scrollY > 0);
+      c1.classList.toggle('sticky', window.scrollY > 85);
+      About_Us.classList.toggle('scroll', window.scrollY > 285);c2.classList.toggle('scroll', window.scrollY > 885);
+      buy.classList.toggle('scroll', window.scrollY > 1485);
+		});
+
+    function navigation() {
+      ul.classList.toggle("open");
+      me.classList.add("done");
+      console.log("Nav Open");
+    }
+
+    function navigation_close(){
+      console.log("Nav close");
+    }
+	</script>
+</body>
+</html>
